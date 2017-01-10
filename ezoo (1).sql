@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2017 at 09:33 AM
+-- Generation Time: Jan 09, 2017 at 10:25 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -43,7 +43,7 @@ INSERT INTO `comment` (`comment_ID`, `lognote_ID`, `user_ID`, `date`, `time`, `c
 (1, '4', 10, '2017-01-08', '11:33:39', 'Have seen this one'),
 (2, '4', 10, '2017-01-08', '11:33:46', 'Have seen this one'),
 (3, '3', 13, '2017-01-08', '11:36:32', 'Wow seen this one but not this close'),
-(4, '3', 4, NULL, '00:00:00', 'this is great\r\n');
+(4, '3', 4, NULL, '00:00:00', 'dfgdoighieo');
 
 -- --------------------------------------------------------
 
@@ -94,10 +94,10 @@ CREATE TABLE `log_note_detail` (
   `location` varchar(200) NOT NULL,
   `elevation` varchar(200) NOT NULL,
   `habbitat` varchar(200) NOT NULL,
+  `name` varchar(500) NOT NULL,
   `size` varchar(200) NOT NULL,
   `looks_like` varchar(200) NOT NULL,
   `colors` varchar(200) NOT NULL,
-  `special` varchar(500) NOT NULL,
   `behaviour` varchar(500) NOT NULL,
   `Description` varchar(45) DEFAULT NULL,
   `track_ID` varchar(200) NOT NULL
@@ -107,12 +107,12 @@ CREATE TABLE `log_note_detail` (
 -- Dumping data for table `log_note_detail`
 --
 
-INSERT INTO `log_note_detail` (`note_ID`, `user_ID`, `image_ID`, `shape`, `date`, `time`, `province`, `village`, `exact_location`, `nearest_city`, `location`, `elevation`, `habbitat`, `size`, `looks_like`, `colors`, `special`, `behaviour`, `Description`, `track_ID`) VALUES
-(0, 1, '', 0, '0000-00-00', '00:00:00', 'North Western and North Central provinces', '', '', 'Puttlam', 'Vilpaththu', '84m/276ft', 'nest', '', '', 'Red and green', '', 'Red and green', NULL, ''),
-(2, 3, '', 0, '0000-00-00', '00:00:00', 'Uva province', '', '', 'Kataragama', 'Yala', '1145m/3758ft', 'Sky', '', '', 'brownwhite', '', 'flying', NULL, ''),
-(3, 4, '', 0, '0000-00-00', '00:00:00', 'Eastern province', '', '', 'Ampara', '\r\n\r\nKumana\r\n', 'sea-level to the low height of 90 metres', '\r\n\r\nnest\r\n', '', '', 'white', '', 'Resting', NULL, ''),
-(4, 3, '', 0, '0000-00-00', '00:00:00', 'Uva province', '', '', 'Kataragama', 'Yala', '1145m/3758ft', '\r\n\r\nSky\r\n', '', '', '\r\n\r\nbrown\r\nwhite\r\n', '', 'flying', NULL, ''),
-(5, 4, '', 0, '0000-00-00', '00:00:00', 'Eastern province', '', '', 'Ampara', '\r\n\r\nKumana\r\n', 'sea-level to the low height of 90 metres', '\r\n\r\nnest\r\n', '', '', 'white', '', 'Resting', NULL, '');
+INSERT INTO `log_note_detail` (`note_ID`, `user_ID`, `image_ID`, `shape`, `date`, `time`, `province`, `village`, `exact_location`, `nearest_city`, `location`, `elevation`, `habbitat`, `name`, `size`, `looks_like`, `colors`, `behaviour`, `Description`, `track_ID`) VALUES
+(0, 1, '', 0, '0000-00-00', '00:00:00', 'North Western and North Central provinces', '', '', 'Puttlam', 'Vilpaththu', '84m/276ft', 'nest', '', '', '', 'Red and green', 'Red and green', NULL, ''),
+(2, 3, '', 0, '0000-00-00', '00:00:00', 'Uva province', '', '', 'Kataragama', 'Yala', '1145m/3758ft', 'Sky', '', '', '', 'brownwhite', 'flying', NULL, ''),
+(3, 4, '', 0, '0000-00-00', '00:00:00', 'Eastern province', '', '', 'Ampara', '\r\n\r\nKumana\r\n', 'sea-level to the low height of 90 metres', '\r\n\r\nnest\r\n', '', '', '', 'white', 'Resting', NULL, ''),
+(4, 3, '', 0, '0000-00-00', '00:00:00', 'Uva province', '', '', 'Kataragama', 'Yala', '1145m/3758ft', '\r\n\r\nSky\r\n', '', '', '', '\r\n\r\nbrown\r\nwhite\r\n', 'flying', NULL, ''),
+(5, 4, '', 0, '0000-00-00', '00:00:00', 'Eastern province', '', '', 'Ampara', '\r\n\r\nKumana\r\n', 'sea-level to the low height of 90 metres', '\r\n\r\nnest\r\n', '', '', '', 'white', 'Resting', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -198,7 +198,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `comment_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `log_note_detail`
 --

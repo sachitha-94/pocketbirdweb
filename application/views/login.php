@@ -52,34 +52,34 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_home" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
-                            <a href="<?php echo base_url(); ?>page_nav/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_map" class="fa-home active">Map</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_map" class="fa-home active">Map</a>
                         </li>
                         <li>
                             <span class="fa-font ">Log Note Library</span>
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_my_log_notes">My Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_my_log_notes">My Log Notes</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_shared_lognotes">Shared Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_lognotes">Shared Log Notes</a>
                                 </li>
                             </ul>
                         </li><li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_gallery" class="fa-th ">Gallery</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_contact" class="fa-comment ">Contact Us</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
                         <div class="login btn padding-horiz-20">
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_login">Log In</a></button>
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_signup">Sign Up</a></button>
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
                         </div>
 
                     </ul>
@@ -98,7 +98,7 @@
                 <div class="row margin-vert-30">
                     <!-- Login Box -->
                     <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-                        <form class="login-page" method="post" action="<?php echo base_url(); ?>sign_up/login">
+                        <form class="login-page" method="post" action="<?php echo base_url(); ?>sign_up_controller/login">
                             <div class="login-header margin-bottom-30">
                                 <h2>Login to your account</h2>
                             </div>

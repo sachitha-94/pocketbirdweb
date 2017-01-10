@@ -51,35 +51,45 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
-                            <a href="<?php echo base_url(); ?>page_nav/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_map" class="fa-home active">Map</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_map" class="fa-home active">Map</a>
                         </li>
                         <li>
                             <span class="fa-font ">Log Note Library</span>
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_my_log_notes">My Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_my_log_notes">My Log Notes</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_shared_lognotes">Shared Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_lognotes">Shared Log Notes</a>
                                 </li>
                             </ul>
                         </li><li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_gallery" class="fa-th ">Gallery</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_contact" class="fa-comment ">Contact Us</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
-                        <div class="login btn padding-horiz-20">
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_login">Log In</a></button>
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_signup">Sign Up</a></button>
-                        </div>
+                        <?php if ($this->session->has_userdata('username')) { ?>
+                            <div class="login btn padding-horiz-20">
+                                <p><?php echo $this->session->userdata('username') ?></p>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
+                            </div>
+                        <?php } else { ?>
+                            <div class="login btn padding-horiz-20">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                            </div>
+                        <?php } ?>
 
                     </ul>
                 </div>
@@ -110,13 +120,13 @@
                         <label>Description</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="description" value="<?php echo $bla->Description;?>">
+                                <input class="form-control" type="text" name="name" value="<?php echo $bla->name;?>">
                             </div>
                         </div>
                         <label>Location</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="location" value="<?php echo $bla->location;?>">
+                                <input class="form-control" type="text" name="exact_location" value="<?php echo $bla->exact_location;?>">
                             </div>
                         </div>
                         <label>Province</label>
@@ -170,7 +180,7 @@
                         <label>Special</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-8 col-md-offset-0">
-                                <textarea rows="8" class="form-control" name="special"><?php echo $bla->special;?></textarea>
+                                <textarea rows="8" class="form-control" name="Description"><?php echo $bla->Description;?></textarea>
                             </div>
                         </div>
                         <label>Behaviour</label>

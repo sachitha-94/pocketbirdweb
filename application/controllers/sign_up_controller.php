@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class sign_up extends CI_Controller
+class sign_up_controller extends CI_Controller
 {
     public function add_user()
     {
@@ -23,11 +23,13 @@ class sign_up extends CI_Controller
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password')
             );
-            $this->load->model('users');
-            $result = $this->users->user_insert($data);
+            $this->load->model('users_model');
+            $result = $this->users_model->user_insert($data);
+            $username = $this->input->post('username');
+
             if ($result == TRUE) {
                 $newdata = array(
-                    'username' => $this->input->post('username'),
+                    'username' => $username,
                     'logged_in' => TRUE
                 );
                 $this->session->set_userdata($newdata);
@@ -46,8 +48,9 @@ class sign_up extends CI_Controller
 
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $this->load->model('users');
-        $result = $this->users->user_login($username,$password);
+        $this->load->model('users_model');
+        $result = $this->users_model->user_login($username,$password);
+
         if ($result == TRUE) {
             $newdata = array(
                 'username' => $this->input->post('username'),
@@ -55,7 +58,7 @@ class sign_up extends CI_Controller
             );
             $this->session->set_userdata($newdata);
 
-            $this->load->view('home', $newdata);
+            $this->load->view('home');
         } else {
             $this->load->view('login');
         }

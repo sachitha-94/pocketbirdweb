@@ -52,35 +52,45 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
-                            <a href="<?php echo base_url(); ?>page_nav/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_map" class="fa-home active">Map</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_map" class="fa-home active">Map</a>
                         </li>
                         <li>
                             <span class="fa-font ">Log Note Library</span>
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_my_log_notes">My Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_my_log_notes">My Log Notes</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_shared_lognotes">Shared Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_lognotes">Shared Log Notes</a>
                                 </li>
                             </ul>
                         </li><li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_gallery" class="fa-th ">Gallery</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_contact" class="fa-comment ">Contact Us</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
-                        <div class="login btn padding-horiz-20">
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_login">Log In</a></button>
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_signup">Sign Up</a></button>
-                        </div>
+                        <?php if ($this->session->has_userdata('username')) { ?>
+                            <div class="login btn padding-horiz-20">
+                                <p><?php echo $this->session->userdata('username') ?></p>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
+                            </div>
+                        <?php } else { ?>
+                            <div class="login btn padding-horiz-20">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                            </div>
+                        <?php } ?>
 
                     </ul>
                 </div>
@@ -124,142 +134,26 @@
                 </div>
             </div>
             <div class="row">
+
                 <div class="col-md-12 portfolio-group no-padding">
                     <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 video">
-                        <div>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_single_lognote">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image1.jpg" alt="image1">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Velit esse molestie</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
+                    <?php foreach($lognote as $bla){?>
+                        <div class="col-md-4 portfolio-item margin-bottom-40 video">
+                            <div>
+                                <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_single_lognote/<?php echo $bla->note_ID ?>">
+                                    <figure>
+                                        <img src="<?php echo base_url(); ?>img/portfolio/image1.jpg" alt="image1">
+                                        <figcaption>
+                                            <h3 class="margin-top-20"><?php echo $bla->nearest_city ?></h3>
+                                            <span><?php echo $bla->province ?></span>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                     <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 design">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image2.jpg" alt="image2">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Quam nunc putamus</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 audio">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image3.jpg" alt="image3">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Placerat facer possim</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 design">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image4.jpg" alt="image4">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Nam liber tempor</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 design">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image5.jpg" alt="image5">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Donec non urna</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 code">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image6.jpg" alt="image6">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Nullam consectetur</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 design">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image7.jpg" alt="image7">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Velit esse molestie</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 code">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image8.jpg" alt="image8">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Quam nunc putamus</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="col-md-4 portfolio-item margin-bottom-40 video">
-                        <div>
-                            <a href="#">
-                                <figure>
-                                    <img src="<?php echo base_url(); ?>img/portfolio/image9.jpg" alt="image9">
-                                    <figcaption>
-                                        <h3 class="margin-top-20">Placerat facer possim</h3>
-                                        <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Portfolio Item -->
+
                 </div>
             </div>
         </div>

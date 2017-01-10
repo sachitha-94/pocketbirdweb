@@ -54,40 +54,48 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
-                            <a href="<?php echo base_url(); ?>page_nav/goto_bird_glossary" class="fa-gears ">Bird
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_bird_glossary" class="fa-gears ">Bird
                                 Glossary</a>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_map" class="fa-home active">Map</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_map" class="fa-home active">Map</a>
                         </li>
                         <li>
                             <span class="fa-font ">Log Note Library</span>
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_my_log_notes">My Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_my_log_notes">My Log Notes</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_shared_lognotes">Shared Log
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_lognotes">Shared Log
                                         Notes</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_gallery" class="fa-th ">Gallery</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_contact" class="fa-comment ">Contact Us</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
-                        <div class="login btn padding-horiz-20">
-                            <button type="button" class="btn btn-success btn-sm"><a
-                                    href="<?php echo base_url(); ?>page_nav/goto_login">Log In</a></button>
-                            <button type="button" class="btn btn-success btn-sm"><a
-                                    href="<?php echo base_url(); ?>page_nav/goto_signup">Sign Up</a></button>
-                        </div>
+                        <?php if ($this->session->has_userdata('username')) { ?>
+                            <div class="login btn padding-horiz-20">
+                                <p><?php echo $this->session->userdata('username')?></p>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
+                            </div>
+                        <?php } else { ?>
+                            <div class="login btn padding-horiz-20">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                            </div>
+                        <?php } ?>
 
                     </ul>
                 </div>
@@ -105,13 +113,14 @@
             <!-- Main Column -->
             <div class="col-md-9">
                 <!-- Blog Post -->
+                <?php foreach($lognote as $bla){?>
                 <div class="blog-post padding-bottom-20">
                     <!-- Blog Item Header -->
                     <div class="blog-item-header">
                         <!-- Title -->
                         <h2>
                             <a href="#">
-                                A Sample Blog Title</a>
+                                <?php echo $bla->exact_location;?></a>
                         </h2>
                         <div class="clearfix"></div>
                         <!-- End Title -->
@@ -127,7 +136,7 @@
                         <!-- Author Name -->
                         <div class="blog-post-details-item blog-post-details-item-left">
                             <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
+                            <a href="#"><?php echo $bla->province;?></a>
                         </div>
                         <!-- End Author Name -->
                         <!-- Tags -->
@@ -157,83 +166,9 @@
                                      alt="thumb1">
                             </div>
                             <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                    vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                <p></p>
                                 <!-- Read More -->
-                                <a href="<?php echo base_url(); ?>lognote_controller/get_lognote_c" class="btn btn-primary">
-                                    Update Log Note
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                Another Sample Blog</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">PHP</a>,
-                            <a href="#">Ruby</a>,
-                            <a href="#">Javascript</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                3 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="<?php echo base_url(); ?>img/blog/image2.jpg"
-                                     alt="thumb2">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                    vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
+                                <a href="<?php echo base_url(); ?>page_nav_controller/goto_single_lognote/<?php echo $bla->note_ID;?>" class="btn btn-primary">
                                     Read More
                                     <i class="icon-chevron-right readmore-icon"></i>
                                 </a>
@@ -243,147 +178,8 @@
                     </div>
                     <!-- End Blog Item Body -->
                 </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                Yet Another Sample Blog Title</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">jQuery</a>,
-                            <a href="#">HTML</a>,
-                            <a href="#">Grunt</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                1 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="<?php echo base_url(); ?>img/blog/image3.jpg"
-                                     alt="thumb3">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                    vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                And One More Sample Blog Title</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">HTML</a>,
-                            <a href="#">HTML5</a>,
-                            <a href="#">CSS3</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                5 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="<?php echo base_url(); ?>img/blog/image4.jpg"
-                                     alt="thumb4">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                    vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
+               <!--End blog item-->
+                <?php }?>
                 <!-- Pagination -->
                 <ul class="pagination">
                     <li>

@@ -11,7 +11,7 @@ class lognote_controller extends CI_Controller {
     public function update_lognote(){
         $newdata = array(
             'Description'=> $this->input->post( 'Description'),
-            'location'=> $this->input->post( 'location'),
+            'exact_location'=> $this->input->post( 'exact_location'),
             'province'=> $this->input->post( 'province'),
             'nearest_city'=> $this->input->post( 'nearest_city'),
             'elevation'=> $this->input->post( 'elevation'),
@@ -20,7 +20,7 @@ class lognote_controller extends CI_Controller {
             'looks_like'=> $this->input->post( 'looks_like'),
             'shape'=> $this->input->post( 'shape'),
             'colors'=> $this->input->post( 'colors'),
-            'special'=> $this->input->post( 'special'),
+            'name'=> $this->input->post( 'name'),
             'behaviour'=> $this->input->post( 'behaviour'),
         );
         $noteID = $this->input->post('note_ID');
@@ -28,7 +28,7 @@ class lognote_controller extends CI_Controller {
         $result = $this->lognote_model->update_lognote($newdata,$noteID);
         if ($result == true) {
             $data = array();
-            $data['message'] = "Update Succeddsull";
+            $data['message'] = "Update Succeddfull";
             $this->load->view('lognote_form_success',$data);
         }else{
             $data = array();
@@ -37,6 +37,54 @@ class lognote_controller extends CI_Controller {
 
         }
     }
+
+    public function display_user_lognote($user_id){
+        $this->load->model('lognote_model');
+        $lognote['lognote'] = $this->lognote_model->get_user_lognote($user_id);
+        $this->load->view('my_log_notes',$lognote);
+    }
+
+    public function display_all_lognote(){
+        $this->load->model('lognote_model');
+        $lognote['lognote'] = $this->lognote_model->get_all_lognote();
+        $this->load->view('lognote_form',$lognote);
+    }
+
+    public  function add_comment(){
+        $this->load->model('users_model');
+        $comment = array(
+            'note_ID' => $this->input->post('note_id'),
+            'user_ID' => $this->users_model->get_user_id($this->session->userdata('username')),
+            'time' => date('H:i:s', now()),
+            'date' => date('Y-m-d ', now()),
+            'content' => $this->input->post('content'),
+
+        );
+        $this->load->model('lognote_model');
+        $result = $this->lognote_model->add_comment($comment);
+        if ($result == true) {
+            #$data['message'] = "Comment Added";
+            $data['one_lognote'] = $this->lognote_model->get_lognote($this->input->post('note_id'));
+            $data['comment'] = $this->lognote_model->select_comment($this->input->post('note_id'));
+            $this->load->view('single_lognote',$data);
+        }else{
+            #$data['message'] = "Comment failed";
+            $data['one_lognote'] = $this->lognote_model->get_lognote($this->input->post('note_id'));
+            $data['comment'] = $this->lognote_model->select_comment($this->input->post('note_id'));
+            $this->load->view('single_lognote',$data);
+
+        }
+    }
+
+    public function select_comment($note_id){
+        $this->load->model('lognote_model');
+        $data['comment'] = $this->lognote_model->select_comment($note_id);
+        $this->load->view('single_lognote',$data);
+
+
+    }
+
+
 
 
 
