@@ -1,3 +1,4 @@
+<!-- === BEGIN HEADER === -->
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -79,20 +80,10 @@
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
-                        <?php if ($this->session->has_userdata('username')) { ?>
-                            <div class="login btn padding-horiz-20">
-                                <p><?php echo $this->session->userdata('username') ?></p>
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
-                            </div>
-                        <?php } else { ?>
-                            <div class="login btn padding-horiz-20">
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
-                            </div>
-                        <?php } ?>
+                        <div class="login btn padding-horiz-20">
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                        </div>
 
                     </ul>
                 </div>
@@ -104,113 +95,51 @@
     <!-- End Top Menu -->
     <!-- === END HEADER === -->
     <!-- === BEGIN CONTENT === -->
-
-
+    <div id="content">
         <div class="container background-white">
-            <?php
-            foreach($lognote as $bla){?>
-            <div class="row margin-vert-30">
-                <!-- Main Column -->
-                <div class="col-md-9">
-                    <!-- Main Content -->
-                    <div class="headline">
-                        <h2>Log Note</h2>
+            <div class="container">
+                <div class="row margin-vert-30">
+                    <!-- Login Box -->
+                    <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                        <p>You are not logged in. Please log in to continue</p>
+                        <form class="login-page" method="post" action="<?php echo base_url(); ?>sign_up_controller/login">
+                            <div class="login-header margin-bottom-30">
+                                <h2>Login to your account</h2>
+                            </div>
+                            <div class="input-group margin-bottom-20">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                <input placeholder="Username" class="form-control" type="text" name="username">
+                            </div>
+                            <div class="input-group margin-bottom-20">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                <input placeholder="Password" class="form-control" type="password" name="password">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="checkbox">
+                                        <input type="checkbox">Stay signed in</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary pull-right" type="submit">Login</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4>Forget your Password ?</h4>
+                            <p>
+                                <a href="#">Click here</a>to reset your password.</p>
+                        </form>
                     </div>
-                    <!-- Contact Form -->
-                    <form class="login-page" method="post" action="<?php echo base_url(); ?>lognote_controller/update_lognote">
-                        <?php $note_id = $bla->note_ID;?><br>
-                        <input type="text" name="note_ID" value="<?php echo $bla->note_ID;?>">
-                        <label>Name</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="name" value="<?php echo $bla->name;?>">
-                            </div>
-                        </div>
-                        <label>Location</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="exact_location" value="<?php echo $bla->exact_location;?>">
-                            </div>
-                        </div>
-                        <label>Province</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="province" value="<?php echo $bla->province;?>">
-                            </div>
-                        </div>
-                        <label>Nearest City</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="nearest_city" value="<?php echo $bla->nearest_city; ?>">
-                            </div>
-                        </div>
-                        <label>Habbitat</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="habbitat" value="<?php echo $bla->habbitat;?>">
-                            </div>
-                        </div>
-                        <label>Size</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="size" value="<?php echo $bla->size;?>">
-                            </div>
-                        </div>
-                        <label>Looks Like</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="looks_like" value="<?php echo $bla->looks_like; ?>">
-                            </div>
-                        </div>
-                        <label>Shape</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="shape" value="<?php echo $bla->shape; ?>">
-                            </div>
-                        </div>
-                        <label>Colors</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="colors" value="<?php echo $bla->colors;?>">
-                            </div>
-                        </div>
-                        <label>Special</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-8 col-md-offset-0">
-                                <textarea rows="8" class="form-control" name="Description"><?php echo $bla->Description;?></textarea>
-                            </div>
-                        </div>
-                        <label>Behaviour</label>
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text" name="behaviour" value="<?php echo $bla->behaviour;?>">
-                            </div>
-                        </div>
-                        <label>Image</label>
-                        <div class="row margin-bottom-20">
-                            <img alt="image6" src="<?php echo base_url(); ?>img/frontpage/image6.jpg">
-                        </div>
-                        <label>Sound Track</label>
-                        <div class="row margin-bottom-20">
-                            <img alt="image6" src="<?php echo base_url(); ?>img/frontpage/image6.jpg">
-                        </div>
-                        <p>
-                            <button type="submit" class="btn btn-primary">Update Log Note</button>
-                        </p>
-                        <?php }
-
-                        ?>
-                    </form>
-                    <!-- End Contact Form -->
-                    <!-- End Main Content -->
+                    <!-- End Login Box -->
                 </div>
-                <!-- End Main Column -->
-
             </div>
         </div>
-
+    </div>
     <!-- === END CONTENT === -->
-    <!-- === BEGIN FOOTER === -->
+    <!-- Footer -->
     <div id="footer" class="background-grey">
         <div class="container">
             <div class="row">
@@ -260,4 +189,4 @@
     <!-- End JS -->
 </body>
 </html>
-<!-- === END FOOTER ===
+<!-- === END FOOTER === -->

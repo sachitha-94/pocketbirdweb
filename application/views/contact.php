@@ -35,7 +35,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo"  height="100"  >                            </a>
                 </div>
                 <!-- End Logo -->
@@ -51,7 +51,7 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav_controller_controller/goto_home" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
@@ -72,6 +72,9 @@
                         </li><li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
@@ -138,6 +141,9 @@
                         <p>
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </p>
+                    </form>
+                    <form action="<?php echo base_url(); ?>page_nav_controller/goto_complain_form">
+                        <button type="submit" class="btn btn-primary">Complain</button>
                     </form>
                     <!-- End Contact Form -->
                     <!-- End Main Content -->

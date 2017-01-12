@@ -36,7 +36,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo"  height="100"  >                            </a>
                 </div>
                 <!-- End Logo -->
@@ -73,6 +73,9 @@
                         </li><li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>

@@ -37,7 +37,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo"  height="100"  >                            </a>
                 </div>
                 <!-- End Logo -->
@@ -53,35 +53,48 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 
-                            <a href="<?php echo base_url(); ?>page_nav/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_bird_glossary" class="fa-gears ">Bird Glossary</a>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_map" class="fa-home active">Map</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_map" class="fa-home active">Map</a>
                         </li>
                         <li>
                             <span class="fa-font ">Log Note Library</span>
                             <ul>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_my_log_notes">My Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_my_log_notes">My Log Notes</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>page_nav/goto_shared_lognotes">Shared Log Notes</a>
+                                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_lognotes">Shared Log Notes</a>
                                 </li>
                             </ul>
                         </li><li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_gallery" class="fa-th ">Gallery</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav/goto_contact" class="fa-comment ">Contact Us</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
-                        <div class="login btn padding-horiz-20">
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_login">Log In</a></button>
-                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav/goto_signup">Sign Up</a></button>
-                        </div>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
+                        </li>
+                        <?php if ($this->session->has_userdata('username')) { ?>
+                            <div class="login btn padding-horiz-20">
+                                <p><?php echo $this->session->userdata('username') ?></p>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
+                            </div>
+                        <?php } else { ?>
+                            <div class="login btn padding-horiz-20">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                            </div>
+                        <?php } ?>
 
                     </ul>
                 </div>
@@ -145,65 +158,7 @@
                                 async defer></script>
                     </div>
 
-                    <hr class="margin-top-20 margin-bottom-30">
-                    <!-- Top Panels -->
-                    <div class="row padding-top-20">
-                        <div class="col-md-3 animate fadeInLeft">
-                            <div class="panel panel-default">
-                                <div class="panel-heading text-center">
-                                    <i class="fa fa-tasks fa-4x"></i>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <h3 class="margin-bottom-10">Responsive Layout</h3>
-                                    Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 animate fadeIn">
-                            <div class="panel panel-default">
-                                <div class="panel-heading text-center">
-                                    <i class="fa fa-twitter fa-4x"></i>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <h3 class="margin-bottom-10">Bootstrap 3</h3>
-                                    Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 animate fadeIn">
-                            <div class="panel panel-default">
-                                <div class="panel-heading text-center">
-                                    <i class="fa fa-code fa-4x"></i>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <h3 class="margin-bottom-10">Clean Code</h3>
-                                    Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 animate fadeInRight">
-                            <div class="panel panel-default">
-                                <div class="panel-heading text-center">
-                                    <i class="fa fa-list-ul fa-4x"></i>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <h3 class="margin-bottom-10">Loaded</h3>
-                                    Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Top Panels -->
-                    <hr class="margin-top-3	0">
-                    <!-- Middle Text -->
-                    <div class="row">
-                        <div class="col-md-12 text-center margin-top-10 animate fadeInUp">
-                            <h2 class="text-center">Nulla in enim quis ipsum pulvinar imperdiet vitae nec velit..</h2>
-                            <p class="text-center margin-bottom-20">Aenean venenatis egestas iaculis. Donec non urna quam. Nullam consectetur condimentum dolor at bibendum.</p>
-                        </div>
-                    </div>
-                    <!-- End Middle Text -->
-                    <hr>
+
                 </div>
             </div>
         </div>

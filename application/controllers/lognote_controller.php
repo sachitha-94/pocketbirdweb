@@ -14,7 +14,6 @@ class lognote_controller extends CI_Controller {
             'exact_location'=> $this->input->post( 'exact_location'),
             'province'=> $this->input->post( 'province'),
             'nearest_city'=> $this->input->post( 'nearest_city'),
-            'elevation'=> $this->input->post( 'elevation'),
             'habbitat'=> $this->input->post( 'habbitat'),
             'size'=> $this->input->post( 'size'),
             'looks_like'=> $this->input->post( 'looks_like'),

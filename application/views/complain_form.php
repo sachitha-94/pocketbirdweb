@@ -35,7 +35,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo"  height="100"  >                            </a>
                 </div>
                 <!-- End Logo -->
@@ -72,6 +72,9 @@
                         </li><li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
@@ -114,7 +117,7 @@
                         sit amet, consectetur adipiscing elit landitiis.</p>
                     <br>
                     <!-- Contact Form -->
-                    <form>
+                    <form class="login-page" method="post" action="<?php echo base_url(); ?>complain_controller/add_complain">
                         <label>Name</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-6 col-md-offset-0">
@@ -129,10 +132,10 @@
                                 <input class="form-control" type="text" name="email">
                             </div>
                         </div>
-                        <label>Complain</label>
+                        <label>Content</label>
                         <div class="row margin-bottom-20">
-                            <div class="col-md-8 col-md-offset-0">
-                                <textarea rows="8" class="form-control"></textarea>
+                            <div class="col-md-6 col-md-offset-0">
+                                <input class="form-control" type="text" name="content">
                             </div>
                         </div>
                         <p>

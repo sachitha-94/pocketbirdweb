@@ -38,7 +38,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo" height="100"> </a>
                 </div>
                 <!-- End Logo -->
@@ -78,6 +78,9 @@
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
@@ -170,28 +173,11 @@
                                 </div>
                             </div>
                             <div class="blog-item-footer">
-                                <!-- About the Author -->
-                                <div class="blog-author panel panel-default margin-bottom-30">
-                                    <div class="panel-heading">
-                                        <h3>About the Author</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <img class="pull-left" src="<?php echo base_url(); ?>img/profiles/87.jpg" alt="image1">
-                                            </div>
-                                            <div class="col-md-10">
-                                                <label>John Doe</label>
-                                                <p>Author Descriprion</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End About the Author -->
                                 <a href="<?php echo base_url(); ?>page_nav_controller/goto_lognote_form/<?php echo $bla->note_ID;?>" class="btn btn-primary">
                                     Update Log Note
                                     <i class="icon-chevron-right readmore-icon"></i>
                                 </a>
+                                <p></p>
                                 <!-- Comments -->
                                 <div class="blog-recent-comments panel panel-default margin-bottom-30">
                                     <div class="panel-heading">

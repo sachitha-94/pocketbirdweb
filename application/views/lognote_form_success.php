@@ -74,6 +74,9 @@
 
                         </li>
                         <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
+                        </li>
+                        <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
                         <?php if ($this->session->has_userdata('username')) { ?>

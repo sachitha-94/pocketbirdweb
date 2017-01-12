@@ -26,7 +26,7 @@ class lognote_model extends CI_Model  {
     }
 
     public function get_user_lognote($user_id){
-        $query = $this->db->where("user_ID",$user_id);
+        $this->db->where("user_ID",$user_id);
         $query = $this->db->get("log_note_detail");
         return $query->result();
     }

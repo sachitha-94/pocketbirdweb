@@ -37,15 +37,9 @@
         <div class="container">
             <div class="row">
                 <!-- Logo -->
-                <button type="button" class="btn btn-success btn-sm"><a
-                        href="<?php echo base_url(); ?>page_nav_controller/goto_admin_dashboard">Administrator</a></button>
-                <button type="button" class="btn btn-success btn-sm"><a
-                        href="<?php echo base_url(); ?>page_nav_controller/get_id">get user id</a></button>
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo" height="100"> </a>
-
-
                 </div>
                 <!-- End Logo -->
             </div>
@@ -84,6 +78,9 @@
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_gallery" class="fa-th ">Gallery</a>
 
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
@@ -155,28 +152,6 @@
             </div>
         </div>
     </div>
-    <!--<div id="icons" class="bottom-border-shadow">
-        <div class="container background-grey bottom-border">
-            <div class="row padding-vert-60">
-                <!-- Icons
-                <div class="col-md-4 text-center">
-                    <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
-                    <h2 class="padding-top-10 animate fadeIn">Velit esse molestie</h2>
-                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
-                    <h2 class="padding-top-10 animate fadeIn">Quam nunc putamus</h2>
-                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
-                    <h2 class="padding-top-10 animate fadeIn">Placerat facer possim</h2>
-                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
-                </div>
-                <!-- End Icons
-            </div>
-        </div>-->
 </div>
 <div id="content" class="bottom-border-shadow">
     <div class="container background-white bottom-border">
@@ -234,7 +209,6 @@
                             <img alt="image1" src="<?php echo base_url(); ?>img/frontpage/image1.jpg">
                             <figcaption>
                                 <h3>Velit esse molestie</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>
@@ -247,7 +221,6 @@
                             <img alt="image2" src="<?php echo base_url(); ?>img/frontpage/image2.jpg">
                             <figcaption>
                                 <h3>Quam nunc putamus</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>
@@ -260,7 +233,6 @@
                             <img alt="image3" src="<?php echo base_url(); ?>img/frontpage/image3.jpg">
                             <figcaption>
                                 <h3>Placerat facer possim</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>
@@ -273,7 +245,6 @@
                             <img alt="image4" src="<?php echo base_url(); ?>img/frontpage/image4.jpg">
                             <figcaption>
                                 <h3>Nam liber tempor</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>
@@ -286,7 +257,6 @@
                             <img alt="image5" src="<?php echo base_url(); ?>img/frontpage/image5.jpg">
                             <figcaption>
                                 <h3>Donec non urna</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>
@@ -299,7 +269,6 @@
                             <img alt="image6" src="<?php echo base_url(); ?>img/frontpage/image6.jpg">
                             <figcaption>
                                 <h3>Nullam consectetur</h3>
-                                <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
                             </figcaption>
                         </figure>
                     </a>

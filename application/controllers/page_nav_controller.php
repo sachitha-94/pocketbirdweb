@@ -20,15 +20,21 @@ class page_nav_controller extends CI_Controller {
         $this->load->view('login');
     }
     public function goto_map(){
-        $this->load->view('map');
+        $this->load->model('Mapdata_model');
+        $data['mapdata'] = $this->Mapdata_model->getAll();
+        $this->load->view('map', $data);
     }
     public function goto_my_log_notes(){
         $this->load->model('lognote_model');
         $this->load->model('users_model');
-        $username = $this->session->userdata('username');
-        $user_id = $this->users_model->get_user_id($username);
-        $data['lognote'] = $this->lognote_model->get_user_lognote($user_id);
-        $this->load->view('my_log_notes',$data);
+        if ($this->session->has_userdata('username')) {
+            $username = $this->session->userdata('username');
+            $user_id = $this->users_model->get_user_id($username);
+            $data['lognote'] = $this->lognote_model->get_user_lognote($user_id);
+            $this->load->view('my_log_notes', $data);
+        }else{
+            $this->load->view('login_error');
+        }
     }
     public function goto_shared_lognotes(){
         $this->load->model('lognote_model');
@@ -67,5 +73,13 @@ class page_nav_controller extends CI_Controller {
         $data['one_lognote'] = $this->lognote_model->get_lognote($note_id);
         $data['comment'] = $this->lognote_model->select_comment($note_id);
         $this->load->view('single_lognote',$data);
+    }
+
+    public function goto_complain_form(){
+        $this->load->view('complain_form');
+    }
+
+    public function goto_about_us(){
+        $this->load->view('about_us');
     }
 }
