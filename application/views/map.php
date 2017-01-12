@@ -141,7 +141,7 @@
                                         foreach ($mapdata as $data) {
                                             $lat = $data->latitude;
                                             $lng = $data->longitude;
-                                            echo "addMarker($lng, $lat);\n";
+                                            echo "addMarker($lat, $lng);\n";
                                         }
                                     ?>
                             }

@@ -51,7 +51,7 @@
                 <div class="visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav_controller_controller/goto_home" class="fa-home active">Home</a>
+                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_home" class="fa-home active">Home</a>
                         </li>
                         <li>
 

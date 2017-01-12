@@ -1,0 +1,9 @@
+getNote function ekata imageId eka dunnama log_note walin image ekata adala details gannawa.loop eka athuledi imageId eka function ekata parse wela a haraha log_note details return karanawa.
+
+$x varibale eken karanne count karanawa 0 idan 2 ta loop eka athuledi incremet wena gaman +1 walin (e kiyanne length eka 3 i), 2(length 3) una gaman ayemath $x = 0 wenawa. 
+
+$y eka awith index eka e kiyanne photos kiyak tyenawada kiyala loop eka athule increment wena gaman count karaganawa. (0 idan count wenne)
+
+database eken images aran loop karala html athule print karana eka thama wenne anthimata. a images print weddi getShapeName function eka execute wela shape name ekath print wela.
+
+getShapeName function eken wenne images table eke tyena shape_id eka loop eka athuledi aran shape_name eka return karana eka.
