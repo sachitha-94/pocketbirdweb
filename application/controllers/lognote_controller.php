@@ -75,6 +75,33 @@ class lognote_controller extends CI_Controller {
         }
     }
 
+
+    public  function add_comment_shared(){
+        $this->load->model('users_model');
+        $comment = array(
+            'note_ID' => $this->input->post('note_id'),
+            'user_ID' => $this->users_model->get_user_id($this->session->userdata('username')),
+            'time' => date('H:i:s', now()),
+            'date' => date('Y-m-d ', now()),
+            'content' => $this->input->post('content'),
+
+        );
+        $this->load->model('lognote_model');
+        $result = $this->lognote_model->add_comment($comment);
+        if ($result == true) {
+            #$data['message'] = "Comment Added";
+            $data['one_lognote'] = $this->lognote_model->get_lognote($this->input->post('note_id'));
+            $data['comment'] = $this->lognote_model->select_comment($this->input->post('note_id'));
+            $this->load->view('shared_single_lognote',$data);
+        }else{
+            #$data['message'] = "Comment failed";
+            $data['one_lognote'] = $this->lognote_model->get_lognote($this->input->post('note_id'));
+            $data['comment'] = $this->lognote_model->select_comment($this->input->post('note_id'));
+            $this->load->view('shared_single_lognote',$data);
+
+        }
+    }
+
     public function select_comment($note_id){
         $this->load->model('lognote_model');
         $data['comment'] = $this->lognote_model->select_comment($note_id);

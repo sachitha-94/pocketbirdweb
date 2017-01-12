@@ -72,7 +72,7 @@ class page_nav_controller extends CI_Controller {
         $this->load->model('lognote_model');
         $data['one_lognote'] = $this->lognote_model->get_lognote($note_id);
         $data['comment'] = $this->lognote_model->select_comment($note_id);
-        $this->load->view('single_lognote',$data);
+        $this->load->view('shared_single_lognote',$data);
     }
 
     public function goto_complain_form(){

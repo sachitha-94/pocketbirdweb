@@ -116,20 +116,21 @@
             <!-- Main Column -->
             <div class="col-md-9">
                 <!-- Blog Post -->
-                <?php foreach($lognote as $bla){?>
+                <?php foreach($lognote as $bla){
+                    ?>
                 <div class="blog-post padding-bottom-20">
                     <!-- Blog Item Header -->
                     <div class="blog-item-header">
                         <!-- Title -->
                         <h2>
                             <a href="#">
-                                <?php echo $bla->exact_location;?></a>
+                                <?php echo $bla->village;?></a>
                         </h2>
                         <div class="clearfix"></div>
                         <!-- End Title -->
                         <!-- Date -->
                         <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
+                            <a href="#"><?php echo $bla->date;?></a>
                         </div>
                         <!-- End Date -->
                     </div>
@@ -143,12 +144,12 @@
                         </div>
                         <!-- End Author Name -->
                         <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">jQuery</a>,
-                            <a href="#">HTML5</a>,
-                            <a href="#">CSS</a>
-                        </div>
+<!--                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">-->
+<!--                            <i class="fa fa-tag color-gray-light"></i>-->
+<!--                            <a href="#">jQuery</a>,-->
+<!--                            <a href="#">HTML5</a>,-->
+<!--                            <a href="#">CSS</a>-->
+<!--                        </div>-->
                         <!-- End Tags -->
                         <!-- # of Comments -->
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
@@ -164,12 +165,9 @@
                     <div class="blog">
                         <div class="clearfix"></div>
                         <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="<?php echo base_url(); ?>img/blog/image1.jpg"
-                                     alt="thumb1">
-                            </div>
                             <div class="col-md-7">
-                                <p></p>
+                                <img class="margin-bottom-20" src="<?php echo base_url(); ?>uploads/<?php echo $bla->image_ID;?>.jpg"
+                                     alt="thumb1">
                                 <!-- Read More -->
                                 <a href="<?php echo base_url(); ?>page_nav_controller/goto_single_lognote/<?php echo $bla->note_ID;?>" class="btn btn-primary">
                                     Read More

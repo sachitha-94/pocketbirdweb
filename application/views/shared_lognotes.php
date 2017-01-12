@@ -145,7 +145,7 @@
                             <div>
                                 <a href="<?php echo base_url(); ?>page_nav_controller/goto_shared_single_lognote/<?php echo $bla->note_ID ?>">
                                     <figure>
-                                        <img src="<?php echo base_url(); ?>img/portfolio/image1.jpg" alt="image1">
+                                        <img src="<?php echo base_url(); ?>uploads/<?php echo $bla->image_ID;?>.jpg" alt="image1">
                                         <figcaption>
                                             <h3 class="margin-top-20"><?php echo $bla->nearest_city ?></h3>
                                             <span><?php echo $bla->province ?></span>

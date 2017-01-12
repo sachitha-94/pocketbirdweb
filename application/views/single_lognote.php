@@ -142,18 +142,18 @@
                             </div>
                             <!-- End Author Name -->
                             <!-- Tags -->
-                            <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                                <i class="fa fa-tag color-gray-light"></i>
-                                <a href="#"><?php echo $bla->province;?></a>,
-                                <a href="#">Javascript</a>,
-                                <a href="#">CoffeeScript</a>
-                            </div>
+<!--                            <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">-->
+<!--                                <i class="fa fa-tag color-gray-light"></i>-->
+<!--                                <a href="#">--><?php //echo $bla->province;?><!--</a>,-->
+<!--                                <a href="#">Javascript</a>,-->
+<!--                                <a href="#">CoffeeScript</a>-->
+<!--                            </div>-->
                             <!-- End Tags -->
                             <!-- # of Comments -->
                             <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
                                 <a href="">
                                     <i class="fa fa-comments color-gray-light"></i>
-                                    3 Comments
+                                    <?php echo count($comment);?> comments
                                 </a>
                             </div>
                             <!-- End # of Comments -->
@@ -162,14 +162,29 @@
                             <div class="clearfix"></div>
                             <div class="blog-post-body row margin-top-15">
                                 <div class="col-md-5">
-                                    <img class="margin-bottom-20" src="<?php echo base_url(); ?>img/blog/image1.jpg" alt="image1">
+                                    <img class="margin-bottom-20" src="<?php echo base_url(); ?>uploads/<?php echo $bla->image_ID;?>.jpg" alt="image1" >
+                                    <p>
+                                        <bold> Province : </bold>         <?php echo $bla->province;?><br>
+                                        <bold>Village :    </bold>       <?php echo $bla->village;?><br>
+                                        <bold>Exact Location :   </bold> <?php echo $bla->exact_location;?><br>
+                                        <bold>Nearest City :   </bold>   <?php echo $bla->nearest_city;?><br>
+                                        <bold>Confidence Level : </bold> <?php echo $bla->confidence_level;?><br>
+                                        <bold>Habitat :      </bold>     <?php echo $bla->habbitat;?><br>
+                                        <bold>Size :       </bold>       <?php echo $bla->size;?><br>
+                                        <bold>Looks Like :   </bold>     <?php echo $bla->looks_like;?><br>
+                                        <bold>Color :     </bold>        <?php echo $bla->colors;?><br>
+                                        <bold>Behaviour : </bold>        <?php echo $bla->behaviour;?><br>
+                                        <bold>Description :     </bold>  <?php echo $bla->Description;?><br>
+                                    </p>
                                 </div>
                                 <div class="col-md-7">
-                                    <p><?php echo $bla->Description;?></p>
+
+                                    <img class="margin-bottom-20" src="<?php echo base_url(); ?>shape/<?php echo $bla->shape;?>.jpg" alt="image1" width="200" height="200">
+
                                 </div>
                                 <div class="col-md-12">
                                     <p>
-                                        <?php echo $bla->exact_location;?></p>
+                                        </p>
                                 </div>
                             </div>
                             <div class="blog-item-footer">
@@ -189,11 +204,7 @@
                                         ?>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <div class="col-md-2 profile-thumb">
-                                                    <a href="#">
-                                                        <img class="media-object" src="<?php echo base_url(); ?>img/profiles/99.jpg" alt="">
-                                                    </a>
-                                                </div>
+
                                                 <div class="col-md-10">
                                                     <h4><?php echo $com->content;?></h4>
                                                     <p>Comment 1</p>
