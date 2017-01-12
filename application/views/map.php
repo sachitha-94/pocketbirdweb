@@ -37,7 +37,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
+                    <a href="index.html">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo"  height="100"  >                            </a>
                 </div>
                 <!-- End Logo -->
@@ -76,25 +76,12 @@
 
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>page_nav_controller/goto_about_us" class="fa-comment ">About Us</a>
-                        </li>
-                        <li>
                             <a href="<?php echo base_url(); ?>page_nav_controller/goto_contact" class="fa-comment ">Contact Us</a>
                         </li>
-                        <?php if ($this->session->has_userdata('username')) { ?>
-                            <div class="login btn padding-horiz-20">
-                                <p><?php echo $this->session->userdata('username') ?></p>
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>sign_up_controller/logout">LogOut</a></button>
-                            </div>
-                        <?php } else { ?>
-                            <div class="login btn padding-horiz-20">
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
-                                <button type="button" class="btn btn-success btn-sm"><a
-                                        href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
-                            </div>
-                        <?php } ?>
+                        <div class="login btn padding-horiz-20">
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_login">Log In</a></button>
+                            <button type="button" class="btn btn-success btn-sm"><a href="<?php echo base_url(); ?>page_nav_controller/goto_signup">Sign Up</a></button>
+                        </div>
 
                     </ul>
                 </div>
@@ -111,7 +98,16 @@
         <div class="row margin-vert-30">
             <div class="col-md-12">
                 <h2 class="margin-bottom-10">MAP</h2>
-                <!-- Intro / Why Us? -->
+                <form method="post" action="<?php echo base_url(); ?>map/index">
+                    <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
+                        <option selected="selected" value="myupload">My Upload</option>
+                        <option value="recentupload">Reasently Upload</option>
+                        <option value="allupload">All Upload</option>
+                    </select> 
+                    <button type="submit">SELECT</button>
+                 </form>    
+                            
+                            <!-- Intro / Why Us? -->
                 <div class="row">
                     <div class="col-md-4 animate fadeIn">
                     </div>
@@ -133,7 +129,7 @@
                             var map;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
-                                    center: {lat: 7, lng: 76},
+                                    center: {lat: 21, lng:73},
                                     zoom: 4
                                 });
                                 
@@ -154,11 +150,20 @@
                                 });
                             }
                         </script>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrUIjSGN6kVO4QzNSQlif0fu2S--N2hVo&callback=initMap"
-                                async defer></script>
                     </div>
 
-
+                    <hr class="margin-top-20 margin-bottom-30">
+                    
+                    <hr class="margin-top-3	0">
+                    <!-- Middle Text -->
+                    <div class="row">
+                        <div class="col-md-12 text-center margin-top-10 animate fadeInUp">
+                            <h2 class="text-center">Nulla in enim quis ipsum pulvinar imperdiet vitae nec velit..</h2>
+                            <p class="text-center margin-bottom-20">Aenean venenatis egestas iaculis. Donec non urna quam. Nullam consectetur condimentum dolor at bibendum.</p>
+                        </div>
+                    </div>
+                    <!-- End Middle Text -->
+                    <hr>
                 </div>
             </div>
         </div>
