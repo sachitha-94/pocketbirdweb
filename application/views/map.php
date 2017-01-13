@@ -105,7 +105,40 @@
                         <option value="allupload">My Upload</option>
                     </select> 
                     <button type="submit">SELECT</button>
-                 </form>    
+                 </form> 
+                
+<!--                 <form method="post" action="<?php echo base_url(); ?>map/index">-->
+                    <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
+                        <option selected="selected" value="Shearwater Bird">Shearwater Bird</option>
+                        <option value="Cormorant">Cormorant</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Duck">Duck</option>
+                        <option value="Eagle">Eagle</option>
+                        <option value="Quail">Quail</option>
+                        <option value="Fowl">Fowl</option>
+                        <option value="Rails">Rils</option>
+                        <option value="Shore Birds">Shore Birds</option>
+                        <option value="Piegeons">Piegeons</option>
+                        <option value="Cuckoos">Cuckoos</option>
+                        <option value="Owls">Owls</option>
+                        <option value="Swifts">Swifts</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option>
+                        
+                    </select> 
+                    <button type="submit">SELECT</button>
+                 </form> 
+                
+                
                             
                             <!-- Intro / Why Us? -->
                 <div class="row">
