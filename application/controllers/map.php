@@ -8,10 +8,12 @@ class Map extends CI_Controller {
             $this->load->model('Mapdata_model');
             $data['mapdata'] = $this->Mapdata_model->getAll();
             $this->load->view('map', $data);
+            
         }else if($type == "recentupload"){
             $this->load->model('Mapdata_model');
             $data['mapdata'] = $this->Mapdata_model->get20();
             $this->load->view('map', $data);
+            
         }else if($type == "myupload"){
             $this->load->model('Mapdata_model');
             $data['mapdata'] = $this->Mapdata_model->get2my($user);
