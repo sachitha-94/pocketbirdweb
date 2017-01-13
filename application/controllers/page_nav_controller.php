@@ -14,7 +14,9 @@ class page_nav_controller extends CI_Controller {
         $this->load->view('contact');
     }
     public function goto_gallery(){
-        $this->load->view('gallery');
+        $this->load->model('image_model');
+        $lognote['image'] = $this->image_model->get_all_images();
+        $this->load->view('gallery',$lognote);
     }
     public function goto_login(){
         $this->load->view('login');

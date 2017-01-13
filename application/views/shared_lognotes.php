@@ -111,28 +111,33 @@
                 <div class="col-md-12">
                     <h2>3 Column Portfolio</h2>
                     <!-- Filter Buttons -->
-                    <div class="portfolio-filter-container margin-top-20">
-                        <ul class="portfolio-filter">
-                            <li class="portfolio-filter-label label label-primary">
-                                filter by:
-                            </li>
-                            <li>
-                                <a href="#" class="portfolio-selected btn btn-default" data-filter="*">All</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".code">Coding</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".design">Design</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".audio">Audio</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".video">Video</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <form action="<?php echo base_url(); ?>lognote_controller/search_by_shape" method="post">
+                        <select name="shape">
+                            <option value="">Category</option>
+                            <option value="1">Shearwaters,petrers & Ganners</option>
+                            <option value="2">Comorants and Pelicans</option>
+                            <option value="3">Herons, Egrets & Storks</option>
+                            <option value="4">Gees & Ducks</option>
+                            <option value="5">Eagles & Hawks</option>
+                            <option value="6">Quails and Fowls</option>
+                            <option value="7">Rails</option>
+                            <option value="8">Shore Birds</option>
+                            <option value="9">pigeons</option>
+                            <option value="10">Cuckoos</option>
+                            <option value="11">Owls</option>
+                            <option value="12">Swifts</option>
+                            <option value="13">Barbets & woodpeckers</option>
+                            <option value="14">Larks & Pipits</option>
+                            <option value="15">Swallows</option>
+                            <option value="16">Bullbuls & Orioles</option>
+                            <option value="17">Warblers</option>
+                            <option value="18">Thrushers, Babblers</option>
+                            <option value="19">Sunbird & flowerpeakers</option>
+                            <option value="20">Crows</option>
+                            <option value="21">Small Brown Bird</option>
+                        </select>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
                     <!-- End Filter Buttons -->
                 </div>
             </div>

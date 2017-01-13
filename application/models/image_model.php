@@ -8,4 +8,9 @@ class image_model extends CI_Model  {
         $image_link = $query->row()->image_link;
         return $image_link;
     }
+
+    public function get_all_images(){
+        $query = $this->db->get("image");
+        return $query->result();
+    }
 }
