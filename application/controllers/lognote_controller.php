@@ -111,8 +111,10 @@ class lognote_controller extends CI_Controller {
     }
 
     public function search_by_shape(){
-        $value = $this->input->post('shape');
-        $this->load->view('user_id',$value);
+        $this->load->model('lognote_model');
+        $shape_id = $this->input->post('shape');
+        $data['lognote'] = $this->lognote_model->selet_by_shape($shape_id);
+        $this->load->view('shared_lognotes',$data);
     }
 
 

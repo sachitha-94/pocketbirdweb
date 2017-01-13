@@ -109,10 +109,9 @@
         <div class="container background-white">
             <div class="row margin-vert-30">
                 <div class="col-md-12">
-                    <h2>3 Column Portfolio</h2>
                     <!-- Filter Buttons -->
                     <form action="<?php echo base_url(); ?>lognote_controller/search_by_shape" method="post">
-                        <select name="shape">
+                        <select id="shape" name="shape">
                             <option value="">Category</option>
                             <option value="1">Shearwaters,petrers & Ganners</option>
                             <option value="2">Comorants and Pelicans</option>
