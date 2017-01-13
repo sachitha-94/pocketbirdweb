@@ -100,9 +100,9 @@
                 <h2 class="margin-bottom-10">MAP</h2>
                 <form method="post" action="<?php echo base_url(); ?>map/index">
                     <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
-                        <option selected="selected" value="myupload">All Upload</option>
+                        <option selected="selected" value="allupload">All Upload</option>
                         <option value="recentupload">Reasently Upload</option>
-                        <option value="allupload">My Upload</option>
+                        <option value="myupload">My Upload</option>
                     </select> 
                     <button type="submit">SEARCH</button>
                  </form> 
@@ -161,7 +161,7 @@
                             var map;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
-                                    center: {lat: 7.9, lng:80.7},
+                                    center: {lat: 7.5, lng:80.7},
                                     zoom: 7
                                 });
                                 
