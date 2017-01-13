@@ -98,19 +98,16 @@
         <div class="row margin-vert-30">
             <div class="col-md-12">
                 <h2 class="margin-bottom-10">MAP</h2>
+                
                 <form method="post" action="<?php echo base_url(); ?>map/index">
                     <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
-                        <option selected="selected" value="allupload">All Upload</option>
-                        <option value="recentupload">Reasently Upload</option>
-                        <option value="myupload">My Upload</option>
-                    </select> 
-                    <button type="submit">SEARCH</button>
-                 </form> 
-                
-<!--                 <form method="post" action="<?php echo base_url(); ?>map/index">-->
-                    <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
-                        <option selected="selected" value="All">All Shapes</option>
-                        <option value="Shearwater Bird">Shearwater Bird</option>
+                        <option value="allupload"<?php if ($type == 'allupload') echo ' selected="selected"';?>>All Upload</option>
+                        <option value="recentupload"<?php if ($type == 'recentupload') echo ' selected="selected"';?>>Reasently Upload</option>
+                        <option value="myupload"<?php if ($type == 'myupload') echo ' selected="selected"';?>>My Upload</option>
+                    </select>
+                    <select style="width: 146px;" id="INS_TYPE" name="shape">
+                        <option value="All"<?php if ($shape == 'All') echo ' selected="selected"';?>>All Shapes</option>
+                        <option value="6"<?php if ($shape == '6') echo ' selected="selected"';?>>Shearwater </option>
                         <option value="Cormorant">Cormorant</option>
                         <option value="Storks">Storks</option> 
                         <option value="Duck">Duck</option>
@@ -184,9 +181,9 @@
                         </script>
                     </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                     <hr class="margin-top-20 margin-bottom-30">
                     
                     <hr class="margin-top-3	0">

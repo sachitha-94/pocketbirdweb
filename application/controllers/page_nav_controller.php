@@ -24,6 +24,9 @@ class page_nav_controller extends CI_Controller {
     public function goto_map(){
         $this->load->model('Mapdata_model');
         $data['mapdata'] = $this->Mapdata_model->getAll();
+        $data['type'] = "allupload";
+        $data['shape'] = "All";
+        
         $this->load->view('map', $data);
     }
     public function goto_my_log_notes(){
