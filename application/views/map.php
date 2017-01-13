@@ -100,10 +100,18 @@
                 <h2 class="margin-bottom-10">MAP</h2>
                 <form method="post" action="<?php echo base_url(); ?>map/index">
                     <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
+<<<<<<< HEAD
                         <option selected="selected" value="allupload">All Upload</option>
                         <option value="myupload">My Upload</option>
                         <option value="recentupload">Reasently Upload</option>
                         
+<!--
+=======
+                        <option selected="selected" value="myupload">My Upload</option>
+                        <option value="recentupload">Reasently Upload</option>
+                        <option value="allupload">All Upload</option>
+-->
+>>>>>>> origin/master
                     </select> 
                     <button type="submit">SELECT</button>
                  </form>    
@@ -156,7 +164,18 @@
                     <hr class="margin-top-20 margin-bottom-30">
                     
                     <hr class="margin-top-3	0">
+<<<<<<< HEAD
                 
+=======
+                    <!-- Middle Text -->
+                    <div class="row">
+                        <div class="col-md-12 text-center margin-top-10 animate fadeInUp">
+                            <h2 class="text-center">Nulla in enim quis ipsum pulvinar imperdiet vitae nec velit..</h2>
+                            <p class="text-center margin-bottom-20">Aenean venenatis egestas iaculis. Donec non urna quam. Nullam consectetur condimentum dolor at bibendum.</p>
+                        </div>
+                    </div>
+                    <!-- End Middle Text -->
+>>>>>>> origin/master
                     <hr>
                 </div>
             </div>
