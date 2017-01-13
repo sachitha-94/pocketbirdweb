@@ -109,10 +109,10 @@
                 
 <!--                 <form method="post" action="<?php echo base_url(); ?>map/index">-->
                     <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
-                        <option selected="selected" value="All">All</option>
+                        <option selected="selected" value="All">All Shapes</option>
                         <option value="Shearwater Bird">Shearwater Bird</option>
                         <option value="Cormorant">Cormorant</option>
-                        <option value="Storks">Storks</option>
+                        <option value="Storks">Storks</option> 
                         <option value="Duck">Duck</option>
                         <option value="Eagle">Eagle</option>
                         <option value="Quail">Quail</option>
