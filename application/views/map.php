@@ -104,7 +104,7 @@
                         <option value="recentupload">Reasently Upload</option>
                         <option value="allupload">My Upload</option>
                     </select> 
-                    <button type="submit">SELECT</button>
+                    <button type="submit">SEARCH</button>
                  </form> 
                 
 <!--                 <form method="post" action="<?php echo base_url(); ?>map/index">-->
@@ -134,7 +134,7 @@
                         <option value="Small Brown Bird">Small Brown Bird</option>
                         
                     </select> 
-                    <button type="submit">SELECT</button>
+                    <button type="submit">SEARCH</button>
                  </form> 
                 
                 
@@ -161,8 +161,8 @@
                             var map;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
-                                    center: {lat: 21, lng:73},
-                                    zoom: 4
+                                    center: {lat: 7.9, lng:80.7},
+                                    zoom: 7
                                 });
                                 
                                    <?php 

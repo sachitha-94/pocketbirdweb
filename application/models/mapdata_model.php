@@ -6,7 +6,7 @@
         }
         
         public function getAll() {
-            $query = $this->db->get("image");
+            $query = $this->db->get("log_note_detail");
             return $query->result();
         }
         
@@ -18,8 +18,8 @@
         public function get20(){
 
 		    $this -> db -> select('*');
-		    $this -> db -> from('image');
-            $this->db->order_by("image_ID","desc");
+		    $this -> db -> from('log_note_detail');
+            $this->db->order_by("note_ID","desc");
 		    $this -> db -> limit(5);
 		    $query = $this -> db -> get();
             return $query->result();
