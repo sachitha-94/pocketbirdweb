@@ -45,6 +45,11 @@
         </div>
     </div>
     <!-- End Header -->
+ 
+                <!-- End Logo -->
+            </div>
+        </div>
+    </div>
     <!-- Top Menu -->
     <div id="hornav" class="bottom-border-shadow">
         <div class="container no-padding border-bottom">
@@ -107,28 +112,28 @@
                     </select>
                     <select style="width: 146px;" id="INS_TYPE" name="shape">
                         <option value="All"<?php if ($shape == 'All') echo ' selected="selected"';?>>All Shapes</option>
-                        <option value="6"<?php if ($shape == '6') echo ' selected="selected"';?>>Shearwater </option>
-                        <option value="Cormorant">Cormorant</option>
-                        <option value="Storks">Storks</option> 
-                        <option value="Duck">Duck</option>
-                        <option value="Eagle">Eagle</option>
-                        <option value="Quail">Quail</option>
-                        <option value="Fowl">Fowl</option>
-                        <option value="Rails">Rils</option>
-                        <option value="Shore Birds">Shore Birds</option>
-                        <option value="Piegeons">Piegeons</option>
-                        <option value="Cuckoos">Cuckoos</option>
-                        <option value="Owls">Owls</option>
-                        <option value="Swifts">Swifts</option>
-                        <option value="Woodpeckers">Woodpeckers</option>
-                        <option value="Larks">Larks</option>
-                        <option value="Swallows">Swallows</option>
-                        <option value="Bulbuls">Bulbuls</option>
-                        <option value="Warblers">Warblers</option>
-                        <option value="Babbler">Babbler</option>
-                        <option value="Sun Birds">Sun Birds</option>
-                        <option value="Crows">Crows</option>
-                        <option value="Small Brown Bird">Small Brown Bird</option>
+                        <option value="1"<?php  if ($shape == '1') echo ' selected="selected"';?>>Shearwater </option>
+                        <option value="2"<?php  if ($shape == '2') echo ' selected="selected"';?>>Cormorant</option>
+                        <option value="3"<?php  if ($shape == '3') echo ' selected="selected"';?>>Storks</option> 
+                        <option value="4"<?php  if ($shape == '4') echo ' selected="selected"';?>>Duck</option>
+                        <option value="5"<?php  if ($shape == '5') echo ' selected="selected"';?>>Eagle</option>
+                        <option value="6"<?php  if ($shape == '6') echo ' selected="selected"';?>>Quail</option>
+                        <option value="6_1"<?php if ($shape == '6_1') echo ' selected="selected"';?>>Fowl</option>
+                        <option value="7"<?php  if ($shape == '7') echo ' selected="selected"';?>>Rils</option>
+                        <option value="8"<?php  if ($shape == '8') echo ' selected="selected"';?>>Shore Birds</option>
+                        <option value="9"<?php  if ($shape == '9') echo ' selected="selected"';?>>Piegeons</option>
+                        <option value="10"<?php if ($shape == '10') echo ' selected="selected"';?>>Cuckoos</option>
+                        <option value="11"<?php if ($shape == '11') echo ' selected="selected"';?>>Owls</option>
+                        <option value="12"<?php if ($shape == '12') echo ' selected="selected"';?>>Swifts</option>
+                        <option value="13"<?php if ($shape == '13') echo ' selected="selected"';?>>Woodpeckers</option>
+                        <option value="14"<?php if ($shape == '14') echo ' selected="selected"';?>>Larks</option>
+                        <option value="15"<?php if ($shape == '15') echo ' selected="selected"';?>>Swallows</option>
+                        <option value="16"<?php if ($shape == '16') echo ' selected="selected"';?>>Bulbuls</option>
+                        <option value="17"<?php if ($shape == '17') echo ' selected="selected"';?>>Warblers</option>
+                        <option value="18"<?php if ($shape == '18') echo ' selected="selected"';?>>Babbler</option>
+                        <option value="19"<?php if ($shape == '19') echo ' selected="selected"';?>>Sun Birds</option>
+                        <option value="20"<?php if ($shape == '20') echo ' selected="selected"';?>>Crows</option>
+                        <option value="21"<?php if ($shape == '21') echo ' selected="selected"';?>>Small Brown Bird</option>
                         
                     </select> 
                     <button type="submit">SEARCH</button>
