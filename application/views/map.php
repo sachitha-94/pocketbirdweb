@@ -155,14 +155,7 @@
                     <hr class="margin-top-20 margin-bottom-30">
                     
                     <hr class="margin-top-3	0">
-                    <!-- Middle Text -->
-                    <div class="row">
-                        <div class="col-md-12 text-center margin-top-10 animate fadeInUp">
-                            <h2 class="text-center">Nulla in enim quis ipsum pulvinar imperdiet vitae nec velit..</h2>
-                            <p class="text-center margin-bottom-20">Aenean venenatis egestas iaculis. Donec non urna quam. Nullam consectetur condimentum dolor at bibendum.</p>
-                        </div>
-                    </div>
-                    <!-- End Middle Text -->
+             
                     <hr>
                 </div>
             </div>
