@@ -109,7 +109,8 @@
                 
 <!--                 <form method="post" action="<?php echo base_url(); ?>map/index">-->
                     <select style="width: 146px;" id="INS_TYPE" name="INS_TYPE">
-                        <option selected="selected" value="Shearwater Bird">Shearwater Bird</option>
+                        <option selected="selected" value="All">All</option>
+                        <option value="Shearwater Bird">Shearwater Bird</option>
                         <option value="Cormorant">Cormorant</option>
                         <option value="Storks">Storks</option>
                         <option value="Duck">Duck</option>
@@ -122,17 +123,15 @@
                         <option value="Cuckoos">Cuckoos</option>
                         <option value="Owls">Owls</option>
                         <option value="Swifts">Swifts</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
-                        <option value="Storks">Storks</option>
+                        <option value="Woodpeckers">Woodpeckers</option>
+                        <option value="Larks">Larks</option>
+                        <option value="Swallows">Swallows</option>
+                        <option value="Bulbuls">Bulbuls</option>
+                        <option value="Warblers">Warblers</option>
+                        <option value="Babbler">Babbler</option>
+                        <option value="Sun Birds">Sun Birds</option>
+                        <option value="Crows">Crows</option>
+                        <option value="Small Brown Bird">Small Brown Bird</option>
                         
                     </select> 
                     <button type="submit">SELECT</button>
