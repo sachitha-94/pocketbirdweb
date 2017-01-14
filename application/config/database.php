@@ -76,9 +76,9 @@ $active_record = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'us-cdbr-azure-southcentral-f.cloudapp.net',
+	'username' => 'b040a65d406d17',
+	'password' => '3df4cc4a',
 	'database' => 'ezoo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
