@@ -49,9 +49,9 @@
                                     <use xlink:href="#stroked-gear"></use>
                                 </svg>
                                 Settings</a></li>
-                        <li><a href="#">
+                        <li><a href="<?php echo base_url(); ?>sign_up_controller/logout">
                                 <svg class="glyph stroked cancel">
-                                    <use xlink:href="#stroked-cancel"></use>
+                                    <use xlink:href="<?php echo base_url(); ?>sign_up_controller/logout"></use>
                                 </svg>
                                 Logout</a></li>
                     </ul>
@@ -69,11 +69,11 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li class="active"><a href="index.html">
+        <li class="factive"><a href="<?php echo base_url(); ?>sign_up_controller/select_new_users">
                 <svg class="glyph stroked dashboard-dial">
-                    <use xlink:href="#stroked-dashboard-dial"></use>
+                    <use xlink:href="#stroked-male-user"></use>
                 </svg>
-                Dashboard</a></li>
+                New Users</a></li>
         <!--<li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>
         <li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
         <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
@@ -81,9 +81,17 @@
         <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
         <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>-->
         <li class="parent ">
-            <a href="#">
+            <a href="<?php echo base_url(); ?>sign_up_controller/select_new_comment">
                 <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use
-                            xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown
+                            xlink:href="#stroked-empty-message"></use></svg></span> New Comments
+            </a>
+            <a href="<?php echo base_url(); ?>sign_up_controller/select_new_complains">
+                <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use
+                                xlink:href="#stroked-app-window-with-content"></use></svg></span> New Complains
+            </a>
+            <a href="<?php echo base_url(); ?>sign_up_controller/select_new_lognotes">
+                <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use
+                                xlink:href="#stroked-bag"></use></svg></span> New Lognotes
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
@@ -113,11 +121,11 @@
             </ul>
         </li>
         <li role="presentation" class="divider"></li>
-        <li><a href="login.html">
+        <li><a href="<?php echo base_url(); ?>sign_up_controller/remove_user">
                 <svg class="glyph stroked male-user">
                     <use xlink:href="#stroked-male-user"></use>
                 </svg>
-                Login Page</a></li>
+                Remove Users</a></li>
     </ul>
 
 </div><!--/.sidebar-->
@@ -125,7 +133,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="#">
+            <li><a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                     <svg class="glyph stroked home">
                         <use xlink:href="#stroked-home"></use>
                     </svg>
@@ -139,8 +147,10 @@
             <h1 class="page-header">Dashboard</h1>
         </div>
     </div><!--/.row-->
-
+    <?php
+    if(!empty($users)) { ?>
     <div class="row">
+
         <div class="col-xs-12 col-md-6 col-lg-3">
             <div class="panel panel-green panel-widget ">
                 <div class="row no-padding">
@@ -149,10 +159,16 @@
                             <use xlink:href="#stroked-bag"></use>
                         </svg>
                     </div>
+
+
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">120</div>
+                        <div class="large"><?php echo $lognotes; ?></div>
                         <div class="text-muted">New Log Notes</div>
+
                     </div>
+                    <button type="button" class="btn btn-success btn-sm"><a
+                                href="<?php echo base_url(); ?>page_nav_controller/goto_signup">view details</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -165,9 +181,12 @@
                         </svg>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">52</div>
+                        <div class="large"><?php echo $comments; ?></div>
                         <div class="text-muted">New Comments</div>
                     </div>
+                    <button type="button" class="btn btn-success btn-sm"><a
+                                href="<?php echo base_url(); ?>sign_up_controller/select_new_comment">view details</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -180,9 +199,12 @@
                         </svg>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">24</div>
+                        <div class="large"><?php echo $users; ?></div>
                         <div class="text-muted">New Users</div>
                     </div>
+                    <button type="button" class="btn btn-success btn-sm"><a
+                                href="<?php echo base_url(); ?>sign_up_controller/select_new_users">view details</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -195,86 +217,186 @@
                         </svg>
                     </div>
                     <div class="col-sm-9 col-lg-7 widget-right">
-                        <div class="large">25.2k</div>
+                        <div class="large"><?php echo $complains; ?></div>
                         <div class="text-muted">New Complains</div>
                     </div>
+
+                    <button type="button" class="btn btn-success btn-sm"><a
+                                href="<?php echo base_url(); ?>sign_up_controller/select_new_complains">view details</a>
+                    </button>
                 </div>
             </div>
         </div>
+
+        <?php /*
+        if(isset($userdetail)) {
+            foreach ($userdetail as $result) {
+                echo $result['user_id'],' ',$result['firstname'], ' ', $result['lastname'], ' ', $result['username'], ' ', $result['email'], ' ', $result['what'],'  ';?><button type="button" class="btn btn-success btn-sm"><a
+                                href="<?php echo base_url(); ?>sign_up_controller/updateview/<?php echo $result['user_id'] ?>">viewed</a></button><?php echo '  '?><button type="button" class="btn btn-success btn-sm"><a
+                            href="<?php echo base_url(); ?>sign_up_controller/updateapprove/<?php echo $result['user_id'] ?>">approved</a></button><?php echo "<br>"."<br>";
+            }
+        }*/
+        ?>
+        <?php
+        if(!empty($userdetail)) { ?>
+            <table border="2" style="background-color: ghostwhite; color: black; margin: 2px auto; width:70%;">
+                <caption style="font-size: large">NEW USERS</caption>
+                <thead>
+                <tr>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Firstname</th>
+                    <th style="text-align: center">Lastname</th>
+                    <th style="text-align: center">Username</th>
+                    <th style="text-align: center">What</th>
+                    <th style="text-align: center">Email</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <?php if (isset($userdetail)) {
+                    foreach ($userdetail as $result) {//foreach($result  as $r):
+                        ?>
+                        <tr>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['user_id'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['firstname'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['lastname'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['username'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['what'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['email'] ?></td>
+                            <td style="padding: 10px;text-align: center;">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/updateview/<?php echo $result['user_id'] ?>">viewed</a>
+                                </button><?php echo "<br>" ?>
+                                <button type="button" class="btn btn-success btn-sm" style="margin: 2px"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/updateapprove/<?php echo $result['user_id'] ?>">approved</a>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    <?php }
+                }//endforeach; ?>
+            </table>
+            <?php
+        }
+        if(!empty($commentdetail)) { ?>
+            <table border="2" style="background-color: ghostwhite; color: black; margin: 2px auto; width:70%;">
+                <caption style="font-size: large">NEW COMMENTS</caption>
+                <tr >
+                    <th style="text-align: center">comment_ID</th>
+                    <th style="text-align: center">note_ID</th>
+                    <th style="text-align: center">user_ID</th>
+                    <th style="text-align: center">date</th>
+                    <th style="text-align: center">time</th>
+                    <th style="text-align: center">content</th>
+                    <th></th>
+                </tr>
+                <?php if (isset($commentdetail)) {
+                    foreach ($commentdetail as $result) {//foreach($result  as $r):
+                        ?>
+                        <tr>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['comment_ID'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['note_ID'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['user_ID'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['date'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['time'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['content'] ?></td>
+                            <td style="padding: 10px;text-align: center;">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/update_viewed_comment/<?php echo $result['comment_ID'] ?>">Reject</a>
+                                </button><?php echo "<br>" ?>
+                                <button type="button" class="btn btn-success btn-sm" style="margin: 2px"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/update_approve_comment/<?php echo $result['comment_ID'] ?>">approved</a>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    <?php }
+                }//endforeach; ?>
+            </table>
+            <?php
+        }
+        if(!empty($complainsdetail)) { ?>
+            <table border="2" style="background-color: ghostwhite; color: black; margin: 2px auto; width:70%;">
+                <caption style="font-size: large">NEW COMPLAINS</caption>
+                <tr >
+                    <th style="text-align: center">Complain_ID</th>
+                    <th style="text-align: center">User_ID</th>
+                    <th style="text-align: center">Date_ID</th>
+                    <th style="text-align: center">Time</th>
+                    <th style="text-align: center">Content</th>
+                    <th></th>
+                </tr>
+                <?php if (isset($complainsdetail)) {
+                    foreach ($complainsdetail as $result) {//foreach($result  as $r):
+                        ?>
+                        <tr>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['complain_ID'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['user_ID'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['date'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['time'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['content'] ?></td>
+
+                            <td style="padding: 10px;text-align: center;">
+                                <button type="button" class="btn btn-success btn-sm" style="margin: 2px"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/update_viewed_complains/<?php echo $result['complain_ID'] ?>">viewed</a>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    <?php }
+                }//endforeach; ?>
+            </table>
+            <?php
+        }
+        }
+        ?>
+        <?php
+        if(!empty($approved_user_details)) { ?>
+            <table border="2" style="background-color: ghostwhite; color: black; margin: 2px auto; width:70%;">
+                <tr>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">Firstname</th>
+                    <th style="text-align: center">Lastname</th>
+                    <th style="text-align: center">Username</th>
+                    <th style="text-align: center">What</th>
+                    <th style="text-align: center">Email</th>
+                    <th style="text-align: center"></th>
+                </tr>
+                <?php if (isset($approved_user_details)) {
+                    foreach ($approved_user_details as $result) {//foreach($result  as $r):
+                        ?>
+                        <tr>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['user_id'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['firstname'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['lastname'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['username'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['what'] ?></td>
+                            <td style="padding: 10px;text-align: center;"><?php echo $result['email'] ?></td>
+                            <td style="padding: 10px;text-align: center;">
+                                <button type="button" class="btn btn-success btn-sm"><a
+                                            href="<?php echo base_url(); ?>sign_up_controller/deleteuser/<?php echo $result['user_id']?>">remove</a>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    <?php }
+                }//endforeach; ?>
+            </table>
+            <?php
+
+        }
+        ?>
     </div><!--/.row-->
+    <?php
+
+    ?>
 
 
-    <div class="panel panel-default chat">
-        <div class="panel-heading" id="accordion">
-            <svg class="glyph stroked two-messages">
-                <use xlink:href="#stroked-two-messages"></use>
-            </svg>
-            Chat
-        </div>
-        <div class="panel-body">
-            <ul>
-                <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                    <div class="chat-body clearfix">
-                        <div class="header">
-                            <strong class="primary-font">John Doe</strong>
-                            <small class="text-muted">32 mins ago</small>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut
-                            ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor
-                            aliquam ultricies.
-                        </p>
-                    </div>
-                </li>
-                <li class="right clearfix">
-								<span class="chat-img pull-right">
-									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar"
-                                         class="img-circle"/>
-								</span>
-                    <div class="chat-body clearfix">
-                        <div class="header">
-                            <strong class="pull-left primary-font">Jane Doe</strong>
-                            <small class="text-muted">6 mins ago</small>
-                        </div>
-                        <p>
-                            Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu
-                            mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque quam
-                            eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum sapien.
-                        </p>
-                    </div>
-                </li>
-                <li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle"/>
-								</span>
-                    <div class="chat-body clearfix">
-                        <div class="header">
-                            <strong class="primary-font">John Doe</strong>
-                            <small class="text-muted">32 mins ago</small>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut
-                            ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor
-                            aliquam ultricies.
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
 
-        <div class="panel-footer">
-            <div class="input-group">
-                <input id="btn-input" type="text" class="form-control input-md"
-                       placeholder="Type your message here..."/>
-                <span class="input-group-btn">
-								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
-							</span>
-            </div>
-        </div>
-    </div>
 
 
 </div>    <!--/.main-->
