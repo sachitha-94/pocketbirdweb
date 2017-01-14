@@ -104,7 +104,7 @@ class sign_up_controller extends CI_Controller
     }
 
 
-   
+
     public function count_new_users(){
         $this->load->model('users_model');
         $count=$this->users_model->count_new_users();
