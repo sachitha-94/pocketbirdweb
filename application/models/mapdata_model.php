@@ -6,33 +6,70 @@
         }
         
         public function getAll() {
-            $query = $this->db->get("image");
+            $query = $this->db->get("log_note_detail");
             return $query->result();
         }
         
-//        public function get20() {
-//            $query = $this->db->get("image", 5, 0);
-//            return $query->result();
-//        }
         
         public function get20(){
 
 		    $this -> db -> select('*');
-		    $this -> db -> from('image');
-            $this->db->order_by("image_ID","desc");
+		    $this -> db -> from('log_note_detail');
+            $this->db->order_by("note_ID","desc");
 		    $this -> db -> limit(5);
 		    $query = $this -> db -> get();
             return $query->result();
     	}
         
-        	public function get2my($id){
+        public function get2my($id){
 
 		    $this -> db -> select('*');
 		    $this -> db -> from('log_note_detail');
-            $this -> db -> join('image','log_note_detail.image_ID = image.image_ID');
-		    $this -> db -> where('log_note_detail.user_ID', $id);
+		    $this -> db -> where('user_ID', $id);
 		    $query = $this -> db -> get();
             return $query->result();
     	}
+        
+        public function getAllwithShape($shape) {
+            $this -> db -> select('*');
+		    $this -> db -> from('log_note_detail');
+		    $this -> db -> where('shape', $shape);
+		    $query = $this -> db -> get();
+            return $query->result();
+        }
+        
+        
+        public function get20withShape($shape){
+
+		    $this -> db -> select('*');
+		    $this -> db -> from('log_note_detail');
+            $this -> db -> where('shape', $shape);
+            $this->db->order_by("note_ID","desc");
+		    $this -> db -> limit(5);
+		    $query = $this -> db -> get();
+            return $query->result();
+    	}
+        
+        public function get2mywithShape($id,$shape){
+
+		    $this -> db -> select('*');
+		    $this -> db -> from('log_note_detail');
+            $this -> db -> where('shape', $shape);
+		    $this -> db -> where('user_ID', $id);
+		    $query = $this -> db -> get();
+            return $query->result();
+    	}
+        
+//        public function selet_by_shape($shape_id){
+//            $this -> db -> select('*');
+//		    $this -> db -> from('log_note_detail');
+//		    $this -> db -> where('shape', $shape_id);
+//		    $query = $this -> db -> get();
+//            return $query->result();
+//        }
+        
+        
+        
     }
+        
 ?>
