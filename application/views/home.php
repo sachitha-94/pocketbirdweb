@@ -37,6 +37,8 @@
         <div class="container">
             <div class="row">
                 <!-- Logo -->
+                <button type="button" class="btn btn-success btn-sm"><a
+                            href="<?php echo base_url(); ?>page_nav_controller/goto_adminlogin">Administrator</a></button>
                 <div class="logo">
                     <a href="<?php echo base_url(); ?>page_nav_controller/goto_home">
                         <img src="<?php echo base_url(); ?>img/applogo.png" alt="Logo" height="100"> </a>
