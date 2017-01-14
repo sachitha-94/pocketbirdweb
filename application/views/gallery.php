@@ -112,24 +112,72 @@
                     <h2>Gallery</h2>
                     <!-- Filter Buttons -->
                     <div class="portfolio-filter-container margin-top-20">
-                        <ul class="portfolio-filter">
-                            <li class="portfolio-filter-label label label-primary">
-                                filter by:
-                            </li>
-                            <li>
-                                <a href="#" class="portfolio-selected btn btn-default" data-filter="*">All</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".code">Images</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".design">Log Notes</a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default" data-filter=".audio">Sounds</a>
-                            </li>
+                        <form action="<?php echo base_url(); ?>image_controller/search_by_shape" method="post">
+                            <select id="shape" name="shape">
+                                <option value="">Category</option>
+                                <option value="1">Shearwaters,petrers & Ganners</option>
+                                <option value="2">Comorants and Pelicans</option>
+                                <option value="3">Herons, Egrets & Storks</option>
+                                <option value="4">Gees & Ducks</option>
+                                <option value="5">Eagles & Hawks</option>
+                                <option value="6">Quails and Fowls</option>
+                                <option value="7">Rails</option>
+                                <option value="8">Shore Birds</option>
+                                <option value="9">pigeons</option>
+                                <option value="10">Cuckoos</option>
+                                <option value="11">Owls</option>
+                                <option value="12">Swifts</option>
+                                <option value="13">Barbets & woodpeckers</option>
+                                <option value="14">Larks & Pipits</option>
+                                <option value="15">Swallows</option>
+                                <option value="16">Bullbuls & Orioles</option>
+                                <option value="17">Warblers</option>
+                                <option value="18">Thrushers, Babblers</option>
+                                <option value="19">Sunbird & flowerpeakers</option>
+                                <option value="20">Crows</option>
+                                <option value="21">Small Brown Bird</option>
+                            </select>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                        <form action="<?php echo base_url(); ?>image_controller/search_by_province" method="post">
+                            <select id="province" name="province">
+                                <option value="">Province</option>
+                                <option value="Central">Central</option>
+                                <option value="Eastern">Eastern</option>
+                                <option value="North Central">North Central</option>
+                                <option value="Northern">Northern</option>
+                                <option value="North Western">North Western</option>
+                                <option value="Sabaragamuwa">Sabaragamuwa</option>
+                                <option value="Uva">Uva</option>
+                                <option value="Western">Western</option>
 
-                        </ul>
+                            </select>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                        <form action="<?php echo base_url(); ?>image_controller/search_by_habitat" method="post">
+                            <select id="habitat" name="habitat">
+                                <option value="">Habitat</option>
+                                <option value="Beach">Beach</option>
+                                <option value="Dry Zone Forest">Dry Zone Forest</option>
+                                <option value="Forest">Forest</option>
+                                <option value="Home Garden">Home Garden</option>
+                                <option value="Lake">Lake</option>
+                                <option value="Low Land Rainforest">Low Land Rainforest</option>
+                                <option value="Mountain">Mountain</option>
+                                <option value="Mountain Rainforest">Mountain Rainforest</option>
+                                <option value="River">River</option>
+                                <option value="Riverine Forest">Riverine Forest</option>
+                                <option value="Scurbland">Scurbland</option>
+                                <option value="Tea Field">Tea Field</option>
+                                <option value="Paddy Field">Paddy Field</option>
+                                <option value="Rubber Field">Rubber Field</option>
+                                <option value="Vegitable Field">Vegitable Field</option>
+                                <option value="Other">Other</option>
+
+
+                            </select>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
                     </div>
                     <!-- End Filter Buttons -->
                 </div>

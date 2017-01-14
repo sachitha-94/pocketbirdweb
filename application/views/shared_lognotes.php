@@ -137,6 +137,45 @@
                         </select>
                         <button class="btn btn-primary" type="submit">Search</button>
                     </form>
+                    <form action="<?php echo base_url(); ?>lognote_controller/search_by_province" method="post">
+                        <select id="province" name="province">
+                            <option value="">Province</option>
+                            <option value="Central">Central</option>
+                            <option value="Eastern">Eastern</option>
+                            <option value="North Central">North Central</option>
+                            <option value="Northern">Northern</option>
+                            <option value="North Western">North Western</option>
+                            <option value="Sabaragamuwa">Sabaragamuwa</option>
+                            <option value="Uva">Uva</option>
+                            <option value="Western">Western</option>
+
+                        </select>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                    <form action="<?php echo base_url(); ?>lognote_controller/search_by_habitat" method="post">
+                        <select id="habitat" name="habitat">
+                            <option value="">Habitat</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Dry Zone Forest">Dry Zone Forest</option>
+                            <option value="Forest">Forest</option>
+                            <option value="Home Garden">Home Garden</option>
+                            <option value="Lake">Lake</option>
+                            <option value="Low Land Rainforest">Low Land Rainforest</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Mountain Rainforest">Mountain Rainforest</option>
+                            <option value="River">River</option>
+                            <option value="Riverine Forest">Riverine Forest</option>
+                            <option value="Scurbland">Scurbland</option>
+                            <option value="Tea Field">Tea Field</option>
+                            <option value="Paddy Field">Paddy Field</option>
+                            <option value="Rubber Field">Rubber Field</option>
+                            <option value="Vegitable Field">Vegitable Field</option>
+                            <option value="Other">Other</option>
+
+
+                        </select>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
                     <!-- End Filter Buttons -->
                 </div>
             </div>

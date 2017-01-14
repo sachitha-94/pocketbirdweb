@@ -13,4 +13,25 @@ class image_controller extends CI_Controller{
         $lognote['image'] = $this->image_model->get_all_image();
         $this->load->view('gallery',$lognote);
     }
+
+    public function search_by_shape(){
+        $this->load->model('image_model');
+        $shape_id = $this->input->post('shape');
+        $data['image'] = $this->image_model->selet_by_shape($shape_id);
+        $this->load->view('gallery',$data);
+    }
+
+    public function search_by_province(){
+        $this->load->model('image_model');
+        $province = $this->input->post('province');
+        $data['image'] = $this->image_model->selet_by_province($province);
+        $this->load->view('gallery',$data);
+    }
+
+    public function search_by_habitat(){
+        $this->load->model('image_model');
+        $habitat = $this->input->post('habitat');
+        $data['image'] = $this->image_model->select_by_habitat($habitat);
+        $this->load->view('gallery',$data);
+    }
 }

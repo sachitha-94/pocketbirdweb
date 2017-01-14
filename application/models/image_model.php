@@ -13,4 +13,28 @@ class image_model extends CI_Model  {
         $query = $this->db->get("image");
         return $query->result();
     }
+
+    public function selet_by_shape($shape_id){
+        $data = array(
+            'shape' => $shape_id
+        );
+        $query = $this->db->get_where("log_note_detail",$data);
+        return $query->result();
+    }
+
+    public function selet_by_province($province){
+        $data = array(
+            'province' => $province
+        );
+        $query = $this->db->get_where("log_note_detail",$data);
+        return $query->result();
+    }
+
+    public function select_by_habitat($habitat){
+        $data = array(
+            'habbitat' => $habitat
+        );
+        $query = $this->db->get_where("log_note_detail",$data);
+        return $query->result();
+    }
 }
